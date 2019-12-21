@@ -1,21 +1,45 @@
 // Make a div
+const div = document.createElement('div');
 
 // add a class of wrapper to it
+div.classList.add('wrapper');
 
 // put it into the body
+document.body.appendChild(div);
 
 // make an unordered list
-
+const unorderList = document.createElement('ul');
 // add three list items with the words "one, two three" in them
+const listItem1 = document.createElement('li');
+listItem1.textContent = 'one';
+
+const listItem2 = listItem1.cloneNode();
+listItem2.textContent = 'two';
+
+const listItem3 = listItem1.cloneNode();
+listItem3.textContent = 'three';
 // put that list into the above wrapper
 
+unorderList.appendChild(listItem1);
+unorderList.appendChild(listItem2);
+unorderList.appendChild(listItem3);
+
+div.appendChild(unorderList);
+
 // create an image
+const newImg = document.createElement('img');
 
 // set the source to an image
+newImg.setAttribute('src', 'https://picsum.photos/200');
 // set the width to 250
+newImg.width = 250;
 // add a class of cute
+newImg.classList.add('cute');
 // add an alt of Cute Puppy
+newImg.alt = 'Cute Puppy';
 // Append that image to the wrapper
+
+div.insertAdjacentElement('beforeend', newImg);
 
 // with HTML string, make a div, with two paragraphs inside of it
 // put this div before the unordered list from above
